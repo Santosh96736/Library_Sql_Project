@@ -36,6 +36,7 @@ Identify the most profitable book formats (e.g., paperback, eBook, hardcover).
 Find the top revenue-generating publishers.
 
 
+## Schema
 
 ```sql
 CREATE DATABASE Library;
@@ -373,3 +374,10 @@ SELECT Country, Total_Quantity,
       DENSE_RANK() OVER(ORDER BY Total_Quantity DESC) AS rn
 FROM Country_Data;
 ````
+
+## Findings & Conclusion
+
+1. The most profitable publisher is Pearson.
+2. Customers from county - Congo purchase the most books.
+3. Customers from city - East Alison spend the least amount .
+4. The best-earning format is Audiobook.
