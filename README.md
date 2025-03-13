@@ -10,16 +10,16 @@
 5. [SQL Queries](#sql-queries)  
 6. [Business Insights](#business-insights)  
 7. [Findings & Conclusion](#findings--conclusion)  
-
+8. [Connect & Explore More](#Connect--Explore-More)
 
 ## 🏆 Overview  
 📚 **Library Data Analysis** is a **data-driven project** that analyzes a library’s book sales, customer behavior, and financial performance using **MySQL**. 
 
 
 ## 🎯 Project Objectives  
-✔ **Efficient Data Storage:** Structured **relational database** for books, customers, and orders.  
-✔ **Fast Data Retrieval:** Use **optimized SQL queries**.  
-✔ **Business Insights:** Identify **bestselling books, revenue trends, and top customers**.  
+1. **Efficient Data Storage:** Structured **relational database** for books, customers, and orders.  
+2. **Fast Data Retrieval:** Use **optimized SQL queries**.  
+3. **Business Insights:** Identify **bestselling books, revenue trends, and top customers**.  
 
 
 
@@ -292,11 +292,11 @@ LIMIT 1;
 📊 Business Insights
 This analysis helps answer key business questions such as:
 
-✔ What are the best-selling books? 📖  
-✔ Which publisher generates the most revenue? 🏆  
-✔ What formats (eBook, audiobook, hardcover) earn the most? 🎧  
-✔ Which city or country buys the most books? 🌍  
-✔ Who are the highest-spending customers? 🛍️  
+1. What are the best-selling books? 📖  
+2. Which publisher generates the most revenue? 🏆  
+3. What formats (eBook, audiobook, hardcover) earn the most? 🎧  
+4. Which city or country buys the most books? 🌍  
+5. Who are the highest-spending customers? 🛍️  
 
 
 📊 Key Findings & Insights
@@ -305,3 +305,8 @@ This analysis helps answer key business questions such as:
 2. Customers from county - Congo purchase the most books.
 3. Customers from city - East Alison spend the least amount .
 4. The best-earning format is Audiobook.
+
+## 📩 Connect & Explore More!  
+
+🔗 **GitHub Repository**: [Library SQL Project](https://github.com/Santosh96736/Library_Sql_Project)  
+📧 **Contact**: [santosh96736@gmail.com](mailto:santosh96736@gmail.com)  
