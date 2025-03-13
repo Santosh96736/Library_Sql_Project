@@ -308,5 +308,5 @@ This analysis helps answer key business questions such as:
 
 ## 📩 Connect & Explore More!  
 
-🔗 **GitHub Repository**: [Library SQL Project](https://github.com/Santosh96736/Library-Sql-Project)  
+🔗 **GitHub Repository**: [Library SQL Project](https://github.com/Santosh96736/Library_Sql_Project)  
 📧 **Contact**: [santosh96736@gmail.com](mailto:santosh96736@gmail.com)  
