@@ -27,9 +27,9 @@
 
    **The database consists of three tables:**
 
-📚 **Book_Details :** Stores Book information.
-👤 **Customer_Details :** Stores Customer information.
-🛒 **Order_Details :** Stores Order information.
+📚 **Book_Details :** Stores Book information.  
+👤 **Customer_Details :** Stores Customer information.  
+🛒 **Order_Details :** Stores Order information.  
    
 ## SQL Queries
 ```sql
@@ -292,11 +292,11 @@ LIMIT 1;
 📊 Business Insights
 This analysis helps answer key business questions such as:
 
-✔ What are the best-selling books? 📖
-✔ Which publisher generates the most revenue? 🏆
-✔ What formats (eBook, audiobook, hardcover) earn the most? 🎧
-✔ Which city or country buys the most books? 🌍
-✔ Who are the highest-spending customers? 🛍️
+✔ What are the best-selling books? 📖  
+✔ Which publisher generates the most revenue? 🏆  
+✔ What formats (eBook, audiobook, hardcover) earn the most? 🎧  
+✔ Which city or country buys the most books? 🌍  
+✔ Who are the highest-spending customers? 🛍️  
 
 
 📊 Key Findings & Insights
