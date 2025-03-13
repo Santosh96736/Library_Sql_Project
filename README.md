@@ -13,27 +13,11 @@ solutions, findings, and conclusions.
 This project aims to analyze and gain insights from a library dataset using MySQL. The key objectives include:
 
 ### 1. Data Organization & Storage
-Design and create a structured relational database for the library system.
-Ensure data integrity by establishing relationships between books, customers, and orders.
-
 ### 2. Efficient Data Retrieval
-Write SQL queries to fetch relevant book, customer, and order details.
-Retrieve top-rated books, best-selling genres, and customer details efficiently.
-
 ### 3. Business Insights & Analytics
-Identify top-selling books and least-selling books.
-Determine high-revenue months and years for better sales strategies.
-Rank publishers based on the total revenue generated.
-
 ### 4. Customer & Sales Behavior Analysis
-Identify the highest-spending customers and their purchasing trends.
-Determine the least-spending city to optimize marketing efforts.
-Rank countries based on total book purchases.
-
 ### 5. Financial Performance Evaluation
-Calculate total revenue, cost of goods sold, and net profit.
-Identify the most profitable book formats (e.g., paperback, eBook, hardcover).
-Find the top revenue-generating publishers.
+
 
 
 ## Schema
