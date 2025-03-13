@@ -2,26 +2,36 @@
 
 ![Library Logo](https://github.com/Santosh96736/Library_Sql_Project/blob/main/Library_logo.jpg)
 
-## Overview
-
-This project involves a comprehensive analysis of Library Dataset using MySql. The goal is to extract valuable insights and answer various
-business questions based on the dataset. The following README provides a detailed account of the project's objectives, business problems,
-solutions, findings, and conclusions.
-
-## Objective
-
-This project aims to analyze and gain insights from a library dataset using MySQL. The key objectives include:
-
-### 1. Data Organization & Storage
-### 2. Efficient Data Retrieval
-### 3. Business Insights & Analytics
-### 4. Customer & Sales Behavior Analysis
-### 5. Financial Performance Evaluation
+## 📖 Table of Contents  
+1. [Overview](#overview)  
+2. [Objective](#objective)  
+3. [Database Schema](#database-schema)  
+4. [Data Loading](#data-loading)  
+5. [SQL Queries](#sql-queries)  
+6. [Business Insights](#business-insights)  
+7. [Findings & Conclusion](#findings--conclusion)  
 
 
+## 🏆 Overview  
+📚 **Library Data Analysis** is a **data-driven project** that analyzes a library’s book sales, customer behavior, and financial performance using **MySQL**. 
 
-## Schema
 
+## 🎯 Project Objectives  
+✔ **Efficient Data Storage:** Structured **relational database** for books, customers, and orders.  
+✔ **Fast Data Retrieval:** Use **optimized SQL queries**.  
+✔ **Business Insights:** Identify **bestselling books, revenue trends, and top customers**.  
+
+
+
+## 🏛️ Database Schema  
+
+   **The database consists of three tables:**
+
+📚 **Book_Details :** Stores Book information.
+👤 **Customer_Details :** Stores Customer information.
+🛒 **Order_Details :** Stores Order information.
+   
+## SQL Queries
 ```sql
 CREATE DATABASE Library;
 ```
@@ -149,17 +159,6 @@ ORDER BY Sale_Price DESC
 LIMIT 3; 
 ```
 
-### TOP 3 HIGH REVIEW BOOKS
-
-```sql
-SELECT 
-    Title, Reviews
-FROM
-    Book_Details
-ORDER BY Reviews DESC
-LIMIT 3; 
-```
-
 ### TOP 3 HIGH REVIEW BOOK IN EACH GENRE
 
 ```sql
@@ -168,17 +167,6 @@ FROM (SELECT Title, Genre, Reviews,
 	 DENSE_RANK() OVER(PARTITION BY Genre ORDER BY Genre, Reviews DESC) AS Rn
 FROM Book_Details) AS Rank_Data
 WHERE Rn <= 3;
-```
-
-### TOP 3 LOW STOCK BOOKS
-
-```sql
-SELECT 
-    Title, Stock
-FROM
-    Book_Details
-ORDER BY Stock
-LIMIT 3; 
 ```
 
 ### TOTAL CUSTOMERS
@@ -197,31 +185,6 @@ SELECT
     SUM(Quantity) AS Total_Quantity_Sold
 FROM
     Order_Details;
-```
-
-### TOP 3 HIGH BOOKS PUBLISHED YEAR
-
-```sql
-SELECT 
-    YEAR(Published_Year) AS Year, COUNT(*) AS Total_Books
-FROM
-    Book_Details
-GROUP BY Year
-ORDER BY Total_Books DESC
-LIMIT 3;
-```
-
-### TOP 3 LOWEST BOOKS SOLD YEAR
-
-```sql
-SELECT 
-    YEAR(Order_Date) AS Year,
-    SUM(Quantity) AS Total_Quantity_Sold
-FROM
-    Order_Details
-GROUP BY Year
-ORDER BY Total_Quantity_Sold
-LIMIT 3; 
 ```
 
 ### TOTAL REVENUE GENERATED 
@@ -247,17 +210,6 @@ FROM
     JOIN Order_Details AS od ON bd.Book_ID = od.Book_ID) AS Financials;
 ```
 
-### TOP 3 HIGH REVENUE MONTHS IN EACH YEAR
-
-```sql
-SELECT Year, Month, Revenue
-FROM (SELECT YEAR(Order_Date) AS Year, MONTH(Order_Date) AS Month, SUM(Total_Amount) AS Revenue,
-     DENSE_RANK() OVER(PARTITION BY YEAR(Order_Date) ORDER BY SUM(Total_Amount) DESC) AS Rn
-FROM Order_Details
-GROUP BY Year, Month) AS Month_Wise_Revenue
-WHERE Rn <= 3;
-```
-
 ### HOW MUCH EACH FORMAT EARNS
 
 ```sql
@@ -276,7 +228,7 @@ FROM
 GROUP BY Format;
  ```
 
-### RANK PUBLISHER BASED ON REVENUE EARN
+### RANKING PUBLISHER BASED ON REVENUE EARN
 
 ```sql
  WITH Revenue_Data AS (SELECT 
@@ -317,7 +269,7 @@ ORDER BY Total_Quantity DESC
 LIMIT 1;
 ```
 
-### LEAST SPEND CITY
+### LEAST SPENDING CITY
 
 ```sql
 WITH Customer_Data AS (SELECT 
@@ -337,29 +289,17 @@ ORDER BY Total_Spending
 LIMIT 1;
 ```
 
-### RANK COUNTRY BASED ON QUANTITY PURCHASED
+📊 Business Insights
+This analysis helps answer key business questions such as:
 
-```sql
-WITH Customer_Data AS (SELECT 
-    Customer_ID, SUM(Quantity) AS Total_Quantity
-FROM
-    Order_Details
-GROUP BY Customer_ID),
+✔ What are the best-selling books? 📖
+✔ Which publisher generates the most revenue? 🏆
+✔ What formats (eBook, audiobook, hardcover) earn the most? 🎧
+✔ Which city or country buys the most books? 🌍
+✔ Who are the highest-spending customers? 🛍️
 
- Country_Data AS (SELECT 
-    Country, SUM(Total_Quantity) AS Total_Quantity
-FROM
-    Customer_Data AS cud
-        JOIN
-    Customer_Details AS cd ON cud.Customer_ID = cd.Customer_ID
-GROUP BY Country) 
 
-SELECT Country, Total_Quantity,
-      DENSE_RANK() OVER(ORDER BY Total_Quantity DESC) AS rn
-FROM Country_Data;
-````
-
-## Findings & Conclusion
+📊 Key Findings & Insights
 
 1. The most profitable publisher is Pearson.
 2. Customers from county - Congo purchase the most books.
